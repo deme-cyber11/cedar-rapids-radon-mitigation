@@ -175,10 +175,10 @@
     "ga4_id": "G-D6ZBY16329",
     "indexnow_key": "a3f7b2c9d4e1f8a5b6c3d0e7f4a1b8c5",
     "started": "2026-03-22",
-    "completed": "",
-    "qa_passed": false,
+    "completed": "2026-03-22",
+    "qa_passed": true,
     "qa_errors": 0,
-    "committed": false,
+    "committed": true,
     "domain_registered": false,
     "deployed": false,
     "gsc_submitted": false
