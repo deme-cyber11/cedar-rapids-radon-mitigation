@@ -1,0 +1,186 @@
+{
+  "_build_pass": "1 \u2014 Brief Lock",
+  "_built_by": "Icarus via new-site-setup.py",
+  "_date": "2026-03-22",
+  "_note": "Auto-generated brief. Claude Code builds from this in Pass 2.",
+  "site": {
+    "business_name": "Cedar Rapids Radon Mitigation",
+    "domain": "cedarrapidsradon.com",
+    "niche": "Radon Mitigation",
+    "niche_slug": "radon-mitigation",
+    "city": "Cedar Rapids",
+    "state": "Iowa",
+    "state_abbr": "IA",
+    "county": "Linn County",
+    "phone": "(319) 528-5190",
+    "phone_formatted": "(319) 528-5190",
+    "phone_digits": "13195285190",
+    "email": "contact@cedarrapidsradon.com",
+    "years_in_business": "8",
+    "tagline": "Cedar Rapids Radon Experts \u2014 Protect Your Family, Guaranteed Results",
+    "web3forms_key": "0219881f-13e5-4175-b720-517b8d10c028"
+  },
+  "seo": {
+    "primary_keyword": "radon mitigation cedar rapids ia",
+    "search_volume": 80,
+    "keyword_difficulty": 15,
+    "cpc": 12.4,
+    "rental_tier": "$200/mo",
+    "meta_title": "Radon Mitigation in Cedar Rapids, IA | Cedar Rapids Radon Mitigation",
+    "meta_description": "Professional radon mitigation in Cedar Rapids, IA. Licensed & insured. Free estimates. Call (319) 528-5190."
+  },
+  "design": {
+    "primary_color": "#1a3a5c",
+    "accent_color": "#28a745",
+    "style": "trust_navy",
+    "font_heading": "Space Grotesk",
+    "font_body": "DM Sans",
+    "hero_style": "split_with_before_after"
+  },
+  "trust_signals": {
+    "badge_1": "Licensed & Insured",
+    "badge_2": "Free Estimates",
+    "badge_3": "5-Star Rated",
+    "badge_4": "Same-Day Service",
+    "years_experience": "8+",
+    "jobs_completed": "500+",
+    "guarantee": "Satisfaction Guaranteed"
+  },
+  "services": [
+    {
+      "slug": "radon-testing",
+      "name": "Radon Testing"
+    },
+    {
+      "slug": "radon-mitigation",
+      "name": "Radon Mitigation"
+    },
+    {
+      "slug": "radon-system-installation",
+      "name": "Radon System Installation"
+    },
+    {
+      "slug": "sub-slab-depressurization",
+      "name": "Sub Slab Depressurization"
+    },
+    {
+      "slug": "radon-fan-replacement",
+      "name": "Radon Fan Replacement"
+    },
+    {
+      "slug": "post-mitigation-testing",
+      "name": "Post Mitigation Testing"
+    }
+  ],
+  "service_areas": [
+    "cedar-rapids",
+    "marion",
+    "hiawatha",
+    "center-point",
+    "ely",
+    "mount-vernon",
+    "lisbon",
+    "solon",
+    "north-liberty",
+    "coralville"
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah M.",
+      "city": "Cedar Rapids",
+      "stars": 5,
+      "text": "Excellent radon mitigation service. Professional, on time, and fair pricing. Would definitely recommend."
+    },
+    {
+      "name": "Mike T.",
+      "city": "Marion",
+      "stars": 5,
+      "text": "Used Cedar Rapids Radon Mitigation twice now. Both times were quick, professional, and exactly what we needed."
+    },
+    {
+      "name": "Jennifer K.",
+      "city": "Cedar Rapids",
+      "stars": 5,
+      "text": "Called for a free estimate and was impressed by the knowledge and professionalism. Hired them on the spot."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What radon level is dangerous in Cedar Rapids?",
+      "a": "The EPA action level is 4 pCi/L. Iowa has some of the highest average radon levels in the US \u2014 the state average is over 8 pCi/L. Cedar Rapids and Linn County frequently test above 4 pCi/L. We recommend testing any home and mitigating at 4 pCi/L or above."
+    },
+    {
+      "q": "How much does radon mitigation cost in Cedar Rapids?",
+      "a": "Radon mitigation in Cedar Rapids typically costs $800\u2013$1,500 for a standard sub-slab depressurization system. The exact cost depends on your home's foundation type, size, and radon levels. We include post-mitigation testing to confirm effectiveness."
+    },
+    {
+      "q": "How long does radon mitigation take?",
+      "a": "Most radon mitigation system installations take 4\u20136 hours in a single day. You can use your home normally immediately after installation. Post-mitigation testing is done 24\u201348 hours after installation."
+    },
+    {
+      "q": "Do you serve Marion, Hiawatha, and surrounding areas?",
+      "a": "Yes \u2014 we serve all of Linn County including Marion, Hiawatha, Center Point, Ely, Mount Vernon, Lisbon, Solon, and into Johnson County including North Liberty and Coralville."
+    },
+    {
+      "q": "Is radon mitigation guaranteed to work?",
+      "a": "Yes \u2014 we guarantee our systems will reduce your radon level below 4 pCi/L or we return to fix it at no additional charge. We include follow-up testing to verify results."
+    }
+  ],
+  "pages": {
+    "root": [
+      "index.html",
+      "about.html",
+      "contact.html",
+      "pricing.html",
+      "faq.html",
+      "thank-you.html",
+      "404.html",
+      "sitemap.xml",
+      "robots.txt",
+      "privacy-policy.html",
+      "terms-of-service.html"
+    ],
+    "services": [
+      "services/radon-testing.html",
+      "services/radon-mitigation.html",
+      "services/radon-system-installation.html",
+      "services/sub-slab-depressurization.html",
+      "services/radon-fan-replacement.html",
+      "services/post-mitigation-testing.html"
+    ],
+    "locations": [
+      "locations/cedar-rapids.html",
+      "locations/marion.html",
+      "locations/hiawatha.html",
+      "locations/center-point.html",
+      "locations/ely.html",
+      "locations/mount-vernon.html",
+      "locations/lisbon.html",
+      "locations/solon.html",
+      "locations/north-liberty.html",
+      "locations/coralville.html"
+    ],
+    "blog": [
+      "blog/index.html",
+      "blog/how-much-does-radon-mitigation-cost-cedar-rapids.html",
+      "blog/signs-you-need-radon-mitigation.html",
+      "blog/how-to-choose-radon-mitigation-contractor.html"
+    ]
+  },
+  "build": {
+    "github_repo": "cedar-rapids-radon-mitigation",
+    "github_org": "deme-cyber11",
+    "twilio_number": "(319) 528-5190",
+    "twilio_area_code": "319",
+    "ga4_id": "G-D6ZBY16329",
+    "indexnow_key": "a3f7b2c9d4e1f8a5b6c3d0e7f4a1b8c5",
+    "started": "2026-03-22",
+    "completed": "",
+    "qa_passed": false,
+    "qa_errors": 0,
+    "committed": false,
+    "domain_registered": false,
+    "deployed": false,
+    "gsc_submitted": false
+  }
+}
