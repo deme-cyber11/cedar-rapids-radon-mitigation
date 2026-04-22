@@ -78,7 +78,7 @@ function initForm(){
     var btn=form.querySelector('button[type="submit"]');
     var origText=btn.textContent;
     btn.textContent='Sending...';btn.disabled=true;
-    fetch('https://api.web3forms.com/submit',{
+    fetch('https://lead-manager-api.irontigerdigital.workers.dev/ingest',{
       method:'POST',
       body:new FormData(form)
     }).then(function(r){return r.json()}).then(function(d){
