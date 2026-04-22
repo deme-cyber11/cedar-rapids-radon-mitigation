@@ -1,94 +1,87 @@
-/* === Before/After Slider === */
-function initSlider(){
-  document.querySelectorAll('.ba-slider').forEach(function(slider){
-    var handle=slider.querySelector('.ba-handle');
-    var before=slider.querySelector('.ba-before');
-    if(!handle||!before)return;
-    var dragging=false;
-    function move(x){
-      var rect=slider.getBoundingClientRect();
-      var pos=Math.max(0,Math.min(1,(x-rect.left)/rect.width));
-      var pct=pos*100;
-      handle.style.left=pct+'%';
-      before.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
-    }
-    handle.addEventListener('mousedown',function(e){e.preventDefault();dragging=true});
-    slider.addEventListener('mousedown',function(e){dragging=true;move(e.clientX)});
-    window.addEventListener('mousemove',function(e){if(dragging)move(e.clientX)});
-    window.addEventListener('mouseup',function(){dragging=false});
-    handle.addEventListener('touchstart',function(e){e.preventDefault();dragging=true},{passive:false});
-    slider.addEventListener('touchstart',function(e){dragging=true;move(e.touches[0].clientX)},{passive:true});
-    window.addEventListener('touchmove',function(e){if(dragging)move(e.touches[0].clientX)},{passive:true});
-    window.addEventListener('touchend',function(){dragging=false});
+/* Sticky header scroll effect */
+const header = document.querySelector('.site-header');
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
   });
 }
 
-/* === Sticky Header Shadow === */
-function initHeader(){
-  var header=document.querySelector('.site-header');
-  if(!header)return;
-  window.addEventListener('scroll',function(){
-    if(window.scrollY>10)header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
+/* Mobile nav toggle */
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
   });
-}
-
-/* === Mobile Nav Toggle === */
-function initMobileNav(){
-  var toggle=document.querySelector('.nav-toggle');
-  var nav=document.querySelector('.main-nav');
-  var overlay=document.querySelector('.nav-overlay');
-  if(!toggle||!nav)return;
-  function close(){nav.classList.remove('open');if(overlay)overlay.classList.remove('open');document.body.style.overflow=''}
-  toggle.addEventListener('click',function(){
-    var open=nav.classList.toggle('open');
-    if(overlay)overlay.classList.toggle('open');
-    document.body.style.overflow=open?'hidden':'';
-  });
-  if(overlay)overlay.addEventListener('click',close);
-  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
-}
-
-/* === FAQ Accordion === */
-function initFaq(){
-  document.querySelectorAll('.faq-question').forEach(function(q){
-    q.addEventListener('click',function(){
-      var item=q.parentElement;
-      var answer=item.querySelector('.faq-answer');
-      var inner=answer.querySelector('.faq-answer-inner');
-      var isOpen=item.classList.contains('active');
-      document.querySelectorAll('.faq-item.active').forEach(function(el){
-        el.classList.remove('active');
-        el.querySelector('.faq-answer').style.maxHeight='0';
-      });
-      if(!isOpen){
-        item.classList.add('active');
-        answer.style.maxHeight=inner.scrollHeight+'px';
-      }
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
     });
   });
 }
 
-/* === Contact Form (Web3Forms) === */
-function initForm(){
-  var form=document.querySelector('#contact-form');
-  if(!form)return;
-  form.addEventListener('submit',function(e){
+/* Before/After Slider */
+document.querySelectorAll('.ba-slider').forEach(slider => {
+  const handle = slider.querySelector('.ba-handle');
+  const before = slider.querySelector('.ba-before');
+  let isDragging = false;
+
+  function setPosition(x) {
+    const rect = slider.getBoundingClientRect();
+    let pct = ((x - rect.left) / rect.width) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+    handle.style.left = pct + '%';
+    before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+  }
+
+  slider.addEventListener('mousedown', e => { isDragging = true; setPosition(e.clientX); });
+  window.addEventListener('mousemove', e => { if (isDragging) setPosition(e.clientX); });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+
+  slider.addEventListener('touchstart', e => { isDragging = true; setPosition(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchmove', e => { if (isDragging) setPosition(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend', () => { isDragging = false; });
+});
+
+/* FAQ Accordion */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = null;
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+/* Contact Form → Worker */
+const form = document.querySelector('#contact-form');
+if (form) {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    var btn=form.querySelector('button[type="submit"]');
-    var origText=btn.textContent;
-    btn.textContent='Sending...';btn.disabled=true;
-    fetch('https://lead-manager-api.irontigerdigital.workers.dev/ingest',{
-      method:'POST',
-      body:new FormData(form)
-    }).then(function(r){return r.json()}).then(function(d){
-      if(d.success)window.location.href='/thank-you/';
-      else{btn.textContent='Error — Try Again';btn.disabled=false}
-    }).catch(function(){btn.textContent=origText;btn.disabled=false});
+    const btn = form.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://lead-manager-api.irontigerdigital.workers.dev/ingest', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+      .then(r => r.json())
+      .then(d => {
+        if (d.success) window.location.href = '/thank-you/';
+        else { btn.textContent = 'Error — Try Again'; btn.disabled = false; }
+      })
+      .catch(() => { btn.textContent = orig; btn.disabled = false; });
   });
 }
-
-/* === Init === */
-document.addEventListener('DOMContentLoaded',function(){
-  initSlider();initHeader();initMobileNav();initFaq();initForm();
-});
