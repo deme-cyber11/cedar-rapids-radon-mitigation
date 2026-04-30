@@ -5,6 +5,60 @@
   --color-accent-glow: rgba(40, 167, 69, 0.3);
 }
 
+/* ── Desktop nav links (class mismatch fix: HTML uses .nav-links, not .main-nav ul or .nav__links) ── */
+.site-header {
+  background: #0f172a !important;
+  border-bottom: none !important;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px !important;
+}
+.logo {
+  color: #fff !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.logo span { color: #28a745 !important; }
+.nav-links {
+  display: flex !important;
+  align-items: center;
+  gap: 28px;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { color: #28a745; }
+.header-phone {
+  color: #fff !important;
+  background: #28a745;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap;
+}
+.header-phone:hover { background: #1e7e34; }
+.header-phone i { font-size: 0.95rem !important; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .header-phone { display: none !important; }
+}
+
 /* ── Hamburger button ── */
 .hamburger {
   display: none;
