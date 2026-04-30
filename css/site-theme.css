@@ -59,6 +59,61 @@
   .header-phone { display: none !important; }
 }
 
+/* ── Inner-page hero (about / services / contact / blog) ── */
+.page-hero, .inner-hero, .service-hero, .contact-hero, .blog-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #16213e 100%) !important;
+  color: #fff !important;
+  padding: 6rem 0 3rem !important;
+  text-align: center !important;
+}
+.page-hero .container, .inner-hero .container,
+.service-hero .container, .contact-hero .container, .blog-hero .container {
+  max-width: 900px; margin: 0 auto; padding: 0 24px;
+}
+.page-hero h1, .inner-hero h1, .service-hero h1, .contact-hero h1, .blog-hero h1 {
+  color: #fff !important;
+  font-size: 2.5rem; font-weight: 800; line-height: 1.2;
+  margin: 0 0 1rem; letter-spacing: -0.02em;
+}
+.page-hero p, .inner-hero p, .service-hero p, .contact-hero p, .blog-hero p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.05rem; line-height: 1.6;
+  margin: 0 auto; max-width: 720px;
+}
+@media (max-width: 768px) {
+  .page-hero, .inner-hero, .service-hero, .contact-hero, .blog-hero {
+    padding: 5rem 0 2.5rem !important;
+  }
+  .page-hero h1, .inner-hero h1, .service-hero h1, .contact-hero h1, .blog-hero h1 {
+    font-size: 1.875rem;
+  }
+}
+
+/* ── Breadcrumb (used inside .page-hero) ── */
+.breadcrumb { margin-bottom: 1rem; }
+.breadcrumb ol, .breadcrumb ul {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+}
+.breadcrumb li { display: inline-flex; align-items: center; }
+.breadcrumb li + li::before { content: "›"; margin-right: 0.5rem; opacity: 0.6; }
+.breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.breadcrumb a:hover { color: #28a745; }
+
+/* ── Suppress orphan <img> placed between </header> and <main> in inner-page templates ── */
+body > header + img,
+body > .site-header + img,
+.site-header ~ img:not([class]) {
+  display: none !important;
+}
+
 /* ── Hamburger button ── */
 .hamburger {
   display: none;
