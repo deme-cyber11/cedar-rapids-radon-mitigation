@@ -202,6 +202,33 @@ main table,
   -webkit-overflow-scrolling: touch;
 }
 
+/* ── Content section (long-form SEO content below inner-page heroes) ── */
+.content-section {
+  background: #fff;
+  padding: 3rem 0 3.5rem;
+}
+.content-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.content-section h2 {
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  line-height: 1.3;
+}
+.content-section h2:first-child { margin-top: 0; }
+.content-section p { color: #374151; line-height: 1.7; margin-bottom: 1rem; }
+.content-section ol,
+.content-section ul { color: #374151; line-height: 1.7; margin-bottom: 1rem; padding-left: 1.6rem; }
+.content-section li { margin-bottom: 0.5rem; }
+.content-section .faq-item { margin-bottom: 1.25rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 1.25rem; }
+.content-section .faq-item h3 { color: #0f172a; font-size: 1rem; font-weight: 700; margin: 0 0 0.4rem; }
+.content-section .faq-item p { margin: 0; }
+.content-section .cta-text { background: #f0f7f2; border-left: 4px solid #28a745; padding: 1rem 1.25rem; border-radius: 4px; font-weight: 600; color: #1e7e34; margin-top: 2rem; }
+
 /* Restore list padding stripped by reset */
 .svc-section ul,
 .loc-section ul,
