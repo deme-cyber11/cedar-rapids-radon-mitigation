@@ -242,6 +242,53 @@ main table,
 .content-section li,
 .calc-content li { margin-bottom: 0.4rem; }
 
+/* ── Inner-page body content wrappers (service / location / blog two-col layouts) ──
+   These classes were built without matching CSS, so h2/h3 fell back to global
+   clamp(1.6rem,4vw,2.4rem) = 2.4rem at desktop — causing oversized headings. */
+.content-main h2,
+.main-content h2,
+.blog-content h2 {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  color: #1e293b !important;
+  line-height: 1.3;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+.content-main h2:first-child,
+.main-content h2:first-child,
+.blog-content h2:first-child { margin-top: 0; }
+.content-main h3,
+.main-content h3,
+.blog-content h3 {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin: 1.5rem 0 0.5rem;
+  line-height: 1.3;
+}
+.content-main p,
+.main-content p,
+.blog-content p {
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+}
+.content-main ul,
+.content-main ol,
+.main-content ul,
+.main-content ol,
+.blog-content ul,
+.blog-content ol {
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  padding-left: 1.6rem;
+}
+.content-main li,
+.main-content li,
+.blog-content li { margin-bottom: 0.4rem; }
+
 /* Testimonial legibility */
 .testimonial-card::before,
 .testimonial-section .testimonial-quote::before { content: none !important; }
