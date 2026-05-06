@@ -65,7 +65,7 @@ p{margin-bottom:1rem}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:50px;font-size:.85rem;font-weight:500;margin-bottom:20px;backdrop-filter:blur(4px)}
 .hero-badge i{color:var(--green)}
-.hero h1{margin-bottom:16px}
+.hero h1{margin-bottom:16px;color:var(--white)}
 .hero h1 span{color:var(--green-light)}
 .hero-text{font-size:1.15rem;opacity:.9;margin-bottom:28px;line-height:1.7}
 .hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
