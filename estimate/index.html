@@ -88,8 +88,11 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
     <p>Tell us about your home so we can schedule testing and prepare a quote.</p>
   </div>
 
-  <form id="form" action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST">
-    <input type="hidden" name="site" value="fiveseasonsradon.com">
+  <div id="form-success" style="display:none;background:#ecfdf5;border:1.5px solid #10b981;border-radius:10px;padding:20px;color:#065f46;margin-bottom:16px" role="status" aria-live="polite"><strong>Thanks — we got your request.</strong><br>We'll reach out shortly. Need us sooner? Call <a href="tel:3195285190">(319) 528-5190</a>.</div>
+<div id="form-error" style="display:none;background:#fef2f2;border:1.5px solid #ef4444;border-radius:10px;padding:20px;color:#7f1d1d;margin-bottom:16px" role="alert" aria-live="assertive"></div>
+  <form id="form" action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST" enctype="multipart/form-data" data-success="form-success" data-error="form-error" data-strict="false" data-fallback-tel="(319) 528-5190" data-require-one="services[]">
+      <input type="hidden" name="site_domain" value="fiveseasonsradon.com">
+    
     <input type="hidden" name="_subject" value="New Estimate Request — Radon Mitigation in Cedar Rapids, IA">
     <input type="hidden" name="_redirect" value="https://fiveseasonsradon.com/estimate/#success">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -105,34 +108,34 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
       <div class="row">
         <div class="field">
           <label for="name">Full Name <span class="req">*</span></label>
-          <input type="text" id="name" name="name" required placeholder="John Smith">
+          <input type="text" id="name" name="name" required placeholder="John Smith" autocomplete="name" maxlength="80">
         </div>
         <div class="field">
           <label for="phone">Phone Number <span class="req">*</span></label>
-          <input type="tel" id="phone" name="phone" required placeholder="(555) 000-1234">
+          <input type="tel" id="phone" name="phone" required placeholder="(555) 000-1234" autocomplete="tel" inputmode="tel" maxlength="20" pattern="\+?1?[\s.\-]?\(?[0-9]{3}\)?[\s.\-]?[0-9]{3}[\s.\-]?[0-9]{4}" title="10-digit US phone number, e.g. (555) 123-4567">
         </div>
       </div>
       <div class="field">
         <label for="email">Email Address <span class="req">*</span></label>
-        <input type="email" id="email" name="email" required placeholder="you@example.com">
+        <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" maxlength="120">
       </div>
       <div class="field">
         <label for="address">Street Address <span class="req">*</span></label>
-        <input type="text" id="address" name="address" required placeholder="123 Main St" autocomplete="address-line1">
+        <input type="text" id="address" name="address" required placeholder="123 Main St" autocomplete="address-line1" maxlength="120">
       </div>
       <div class="row">
         <div class="field">
           <label for="city">City <span class="req">*</span></label>
-          <input type="text" id="city" name="city" required placeholder="City" autocomplete="address-level2">
+          <input type="text" id="city" name="city" required placeholder="City" autocomplete="address-level2" maxlength="60">
         </div>
         <div class="field">
           <label for="state">State <span class="req">*</span></label>
-          <input type="text" id="state" name="state" required placeholder="TX" maxlength="2" autocomplete="address-level1" oninput="this.value=this.value.toUpperCase()">
+          <input type="text" id="state" name="state" required placeholder="TX" maxlength="2" autocomplete="address-level1" oninput="this.value=this.value.toUpperCase()" pattern="[A-Za-z]{2}" title="2-letter state code">
         </div>
       </div>
       <div class="field" style="margin-bottom:0">
         <label for="zip">ZIP Code <span class="req">*</span></label>
-        <input type="text" id="zip" name="zip" required placeholder="00000" pattern="[0-9]{5}(-[0-9]{4})?" inputmode="numeric" autocomplete="postal-code">
+        <input type="text" id="zip" name="zip" required placeholder="00000" pattern="[0-9]{5}(-[0-9]{4})?" inputmode="numeric" autocomplete="postal-code" maxlength="10" title="5-digit ZIP">
       </div>
     </div>
 
@@ -167,7 +170,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
       </div>
     <div class="field">
       <label for="home_type">Home Foundation Type</label>
-      <select id="home_type" name="home_type">
+      <select id="home_type" name="home_type" required>
         <option value="">Select if known...</option>
           <option>Full basement</option>
           <option>Crawl space</option>
@@ -178,7 +181,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
     </div>
     <div class="field">
       <label for="home_sqft">Home Square Footage</label>
-      <select id="home_sqft" name="home_sqft">
+      <select id="home_sqft" name="home_sqft" required>
         <option value="">Select if known...</option>
           <option>Under 1,000 sq ft</option>
           <option>1,000–1,500 sq ft</option>
@@ -255,7 +258,7 @@ textarea{resize:vertical;min-height:88px;line-height:1.6}
       </div>
       <div class="field">
         <label for="notes">Anything else we should know?</label>
-        <textarea id="notes" name="notes" rows="4" placeholder="Describe the project in more detail, any concerns, previous quotes received, access issues, etc."></textarea>
+        <textarea id="notes" name="notes" rows="4" placeholder="Describe the project in more detail, any concerns, previous quotes received, access issues, etc." required minlength="10" maxlength="2000"></textarea>
       </div>
       <div class="field" style="margin-bottom:0">
         <label>Photos <span class="hint">(optional — helps us give a more accurate estimate)</span></label>
@@ -324,5 +327,6 @@ document.querySelectorAll('input[name="services[]"]').forEach(function(cb){
   cb.addEventListener('change',function(){document.querySelector('.check-grid').style.outline='';});
 });
 </script>
+<script src="/js/form.js" defer></script>
 </body>
 </html>

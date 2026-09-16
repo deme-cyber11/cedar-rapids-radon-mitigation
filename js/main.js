@@ -64,24 +64,5 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-/* Contact Form → Worker */
-const form = document.querySelector('#contact-form');
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const orig = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    fetch('https://lead-manager-api.irontigerdigital.workers.dev/ingest', {
-      method: 'POST',
-      body: new FormData(form)
-    })
-      .then(r => r.json())
-      .then(d => {
-        if (d.success) window.location.href = '/thank-you/';
-        else { btn.textContent = 'Error — Try Again'; btn.disabled = false; }
-      })
-      .catch(() => { btn.textContent = orig; btn.disabled = false; });
-  });
-}
+/* Lead-form submission is handled by /js/form.js (shared ITD handler). */
+
