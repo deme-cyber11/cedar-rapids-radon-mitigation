@@ -9,12 +9,7 @@
   <link rel="canonical" href="https://fiveseasonsradon.com/faq/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.v1.css">
-    <link rel="stylesheet" href="/css/style.v2.5.css">
-    <link rel="stylesheet" href="/css/site-theme.css?v=7">
-  <script defer src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap">
   <script defer src="/js/main.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6ZBY16329"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-D6ZBY16329');</script>
@@ -47,8 +42,9 @@
   <meta name="twitter:description" content="Frequently asked questions about radon testing and mitigation in Cedar Rapids, IA. Learn about radon levels, costs, timelines, and our service guarantee." />
     <meta name="theme-color" content="#1a1a2e">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/modern.css?v=20261001">
 </head>
-<body>
+<body class="fs fs-page">
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="logo"><span class="nav-logo-icon" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--color-accent,#28a745);border-radius:6px;font-weight:900;font-size:1.2rem;color:#fff;flex-shrink:0;margin-right:.5rem">CR</span> Cedar Rapids <span>Radon</span></a>
@@ -62,7 +58,7 @@
           <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
-      <a href="tel:+13195285190" class="header-phone"><i class="ph ph-phone"></i> (319) 528-5190</a>
+      <a href="tel:+13195285190" class="header-phone"><svg class="fs-i" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg> (319) 528-5190</a>
       <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -75,12 +71,12 @@
   <a href="/about/">About</a>
   <a href="/blog/">Blog</a>
   <a href="/contact/">Contact</a>
-  <a href="tel:+13195285190"><i class="ph ph-phone"></i> (319) 528-5190</a>
+  <a href="tel:+13195285190"><svg class="fs-i" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg> (319) 528-5190</a>
 </div>
 
   
 <main>
-    <section class="page-hero">
+    <section class="page-hero" style="--hero-img:url(/images/site/basement-pipe.jpg)">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol>
@@ -96,55 +92,25 @@
     <section class="faq-section section">
       <div class="container">
         <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>What radon level is dangerous in Cedar Rapids?</span>
-              <i class="ph ph-caret-down"></i>
-            </button>
-            <div class="faq-answer">
+          <details class="faq-item"><summary>What radon level is dangerous in Cedar Rapids?</summary><div class="faq-answer">
               <p>The EPA action level is 4 pCi/L. Iowa has some of the highest average radon levels in the US — the state average is over 8 pCi/L. Cedar Rapids and Linn County frequently test above 4 pCi/L. We recommend testing any home and mitigating at 4 pCi/L or above.</p>
-            </div>
-          </div>
+            </div></details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>How much does radon mitigation cost in Cedar Rapids?</span>
-              <i class="ph ph-caret-down"></i>
-            </button>
-            <div class="faq-answer">
+          <details class="faq-item"><summary>How much does radon mitigation cost in Cedar Rapids?</summary><div class="faq-answer">
               <p>Radon mitigation in Cedar Rapids typically costs $800–$1,500 for a standard sub-slab depressurization system. The exact cost depends on your home's foundation type, size, and radon levels. We include post-mitigation testing to confirm effectiveness.</p>
-            </div>
-          </div>
+            </div></details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>How long does radon mitigation take?</span>
-              <i class="ph ph-caret-down"></i>
-            </button>
-            <div class="faq-answer">
+          <details class="faq-item"><summary>How long does radon mitigation take?</summary><div class="faq-answer">
               <p>Most radon mitigation system installations take 4–6 hours in a single day. You can use your home normally immediately after installation. Post-mitigation testing is done 24–48 hours after installation.</p>
-            </div>
-          </div>
+            </div></details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Do you serve Marion, Hiawatha, and surrounding areas?</span>
-              <i class="ph ph-caret-down"></i>
-            </button>
-            <div class="faq-answer">
+          <details class="faq-item"><summary>Do you serve Marion, Hiawatha, and surrounding areas?</summary><div class="faq-answer">
               <p>Yes — we serve all of Linn County including Marion, Hiawatha, Center Point, Ely, Mount Vernon, Lisbon, Solon, and into Johnson County including North Liberty and Coralville.</p>
-            </div>
-          </div>
+            </div></details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Is radon mitigation guaranteed to work?</span>
-              <i class="ph ph-caret-down"></i>
-            </button>
-            <div class="faq-answer">
+          <details class="faq-item"><summary>Is radon mitigation guaranteed to work?</summary><div class="faq-answer">
               <p>Yes — we guarantee our systems will reduce your radon level below 4 pCi/L or we return to fix it at no additional charge. We include follow-up testing to verify results.</p>
-            </div>
-          </div>
+            </div></details>
         </div>
       </div>
     </section>
@@ -155,7 +121,7 @@
           <h2>Still Have Questions?</h2>
           <p>Our team is happy to answer any questions about radon testing or mitigation. Call us directly or send us a message — we respond within 1 business hour.</p>
           <div class="cta-buttons">
-            <a href="tel:+13195285190" class="btn btn-primary btn-lg"><i class="ph ph-phone"></i> Call (319) 528-5190</a>
+            <a href="tel:+13195285190" class="btn btn-primary btn-lg"><svg class="fs-i" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg> Call (319) 528-5190</a>
             <a href="/contact/" class="btn btn--ghost btn-lg">Contact Us</a>
           </div>
         </div>
@@ -164,23 +130,23 @@
   </main>
 
   
-<section class="content-section" style="padding:40px 0 56px;">
-<div class="container" style="max-width:800px;margin:0 auto;padding:0 20px;">
-  <div class="faq-item" style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #e5e7eb;">
-    <h3 style="font-weight:700;color:#1a3a5c;margin-bottom:8px;">How long does radon mitigation installation take?</h3>
-    <p style="color:#4b5563;line-height:1.8;">Most standard sub-slab depressurization systems are installed in one day — typically 3 to 5 hours for a single-family home. More complex situations, like homes with multiple foundation types (combination of slab and crawl space), may take longer. We'll give you a realistic timeline during your free estimate.</p>
+<section class="content-section">
+<div class="container">
+  <div class="faq-item">
+    <h3>How long does radon mitigation installation take?</h3>
+    <p>Most standard sub-slab depressurization systems are installed in one day — typically 3 to 5 hours for a single-family home. More complex situations, like homes with multiple foundation types (combination of slab and crawl space), may take longer. We'll give you a realistic timeline during your free estimate.</p>
   </div>
-  <div class="faq-item" style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #e5e7eb;">
-    <h3 style="font-weight:700;color:#1a3a5c;margin-bottom:8px;">What radon level is considered safe?</h3>
-    <p style="color:#4b5563;line-height:1.8;">The EPA action level for radon is 4.0 pCi/L (picocuries per liter of air). At or above this level, mitigation is strongly recommended. The EPA also suggests that any level between 2.0 and 4.0 pCi/L should be mitigated if possible. There is no truly "safe" level of radon — it's a carcinogen — but modern mitigation systems routinely achieve levels below 2.0 pCi/L, and often below 1.0 pCi/L.</p>
+  <div class="faq-item">
+    <h3>What radon level is considered safe?</h3>
+    <p>The EPA action level for radon is 4.0 pCi/L (picocuries per liter of air). At or above this level, mitigation is strongly recommended. The EPA also suggests that any level between 2.0 and 4.0 pCi/L should be mitigated if possible. There is no truly "safe" level of radon — it's a carcinogen — but modern mitigation systems routinely achieve levels below 2.0 pCi/L, and often below 1.0 pCi/L.</p>
   </div>
-  <div class="faq-item" style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #e5e7eb;">
-    <h3 style="font-weight:700;color:#1a3a5c;margin-bottom:8px;">Will a radon mitigation system affect my home's energy efficiency?</h3>
-    <p style="color:#4b5563;line-height:1.8;">A properly installed sub-slab depressurization system draws air from beneath the foundation — not from your conditioned living space — so the impact on heating and cooling costs is minimal. The fan motor draws a small amount of electricity continuously, typically $5–$15 per month depending on the system. The health benefit far outweighs the modest operating cost.</p>
+  <div class="faq-item">
+    <h3>Will a radon mitigation system affect my home's energy efficiency?</h3>
+    <p>A properly installed sub-slab depressurization system draws air from beneath the foundation — not from your conditioned living space — so the impact on heating and cooling costs is minimal. The fan motor draws a small amount of electricity continuously, typically $5–$15 per month depending on the system. The health benefit far outweighs the modest operating cost.</p>
   </div>
-  <div class="faq-item" style="margin-bottom:24px;padding-bottom:24px;">
-    <h3 style="font-weight:700;color:#1a3a5c;margin-bottom:8px;">Do new homes in Iowa need radon mitigation?</h3>
-    <p style="color:#4b5563;line-height:1.8;">Many newer Iowa homes are built with passive radon-resistant construction features, but passive systems don't always reduce radon to safe levels. Even with radon-resistant new construction, testing after move-in is recommended. If levels are elevated, activating the system (adding a fan) converts it to an active mitigation system quickly and inexpensively. We test and activate these systems throughout the Cedar Rapids area.</p>
+  <div class="faq-item">
+    <h3>Do new homes in Iowa need radon mitigation?</h3>
+    <p>Many newer Iowa homes are built with passive radon-resistant construction features, but passive systems don't always reduce radon to safe levels. Even with radon-resistant new construction, testing after move-in is recommended. If levels are elevated, activating the system (adding a fan) converts it to an active mitigation system quickly and inexpensively. We test and activate these systems throughout the Cedar Rapids area.</p>
   </div>
 </div>
 </section>
@@ -190,7 +156,7 @@
         <div class="footer-brand">
           <div class="logo">Cedar Rapids <span>Radon</span></div>
           <p>Professional radon mitigation services in Cedar Rapids, IA and surrounding areas. Licensed and insured with 8+ years of experience protecting Iowa families.</p>
-          <a href="tel:+13195285190" class="btn btn-primary"><i class="ph ph-phone"></i> (319) 528-5190</a>
+          <a href="tel:+13195285190" class="btn btn-primary"><svg class="fs-i" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd"/></svg> (319) 528-5190</a>
         </div>
         <div>
           <h4 class="footer-heading">Services</h4>
