@@ -530,7 +530,7 @@ h1, h2, h3, .lead-title, .summary-stat .val { font-family: 'Plus Jakarta Sans', 
 <div class="cta-card">
   <h3>Questions? Ready to move on this lead?</h3>
   <p>Reply to the email or call Costa directly. The first contractor to call has the best shot at the job.</p>
-  <a href="mailto:contact@irontigerdigital.com" class="cta-btn">contact@irontigerdigital.com</a>
+  <a href="mailto:contact@irontigerdigital.com?subject=Cedar%20Rapids%20radon%20lead%20%E2%80%94%20Don%20Burrows" class="cta-btn">Email Costa</a>
   <a href="tel:+12255354918" class="cta-btn secondary">Call (225) 535-4918</a>
 </div>
 
@@ -803,7 +803,7 @@ document.addEventListener('visibilitychange', function () { if (!document.hidden
   if (!total) return;                       // never blank the page out on a selector change
   var finish = 0;
   for (var i = 0; i < cards.length; i++) {
-    if (/resurfac/i.test(cards[i].textContent || '')) finish++;
+    if (/mitigation/i.test(cards[i].textContent || '')) finish++;
   }
   var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
   set('stat-total', total);
