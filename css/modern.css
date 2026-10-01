@@ -470,3 +470,27 @@ body.fs .mobile-cta-bar { display: none; }
 body.fs .features-grid:has(> :last-child:nth-child(4)) { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 640px) { body.fs .features-grid:has(> :last-child:nth-child(4)) { grid-template-columns: 1fr; } }
 body.fs .site-header:has(.hamburger.open) { z-index: 130; }
+
+/* ---------- Round 2 (2026-10-01): phone and tablet only, desktop untouched ---------- */
+@media (max-width: 1080px), (hover: none) {
+  body.fs .site-header .logo { min-height: 44px; }
+  body.fs .breadcrumb a, body.fs .breadcrumb-list a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+  body.fs .breadcrumb li, body.fs .breadcrumb-list li { align-items: center; }
+  body.fs main a[href^="tel:"]:not(.btn), body.fs .contact-detail-text a[href^="tel:"] { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 900px) {
+  body.fs .hamburger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; margin-left: 10px; }
+  body.fs .site-header .header-phone { display: inline-flex; margin-left: auto; min-height: 44px; padding: 10px 16px; }
+}
+@media (max-width: 640px) {
+  body.fs .header-inner { gap: 8px; }
+  body.fs .site-header .header-phone { width: 44px; height: 44px; padding: 0; justify-content: center; font-size: 0; gap: 0; }
+  body.fs .site-header .header-phone .fs-i { width: 20px; height: 20px; }
+  body.fs .hamburger { margin-left: 4px; }
+  body.fs .contact-grid > *, body.fs .contact-form-wrap, body.fs .contact-info-wrap, body.fs .contact-info-card { min-width: 0; }
+  body.fs .contact-info-card { padding: 24px 20px; overflow-wrap: anywhere; }
+  body.fs .form-group select { min-width: 0; max-width: 100%; }
+}
+@media (max-width: 380px) {
+  body.fs .site-header .logo { font-size: 1rem; }
+}
