@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cedar Rapids Radon Mitigation · Lead Packet · AIR Radon</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0c2d48">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c2d48'/%3E%3Ctext x='32' y='44' font-family='system-ui' font-size='32' font-weight='800' text-anchor='middle' fill='%23fff'%3EITD%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+
+<style>
+:root {
+  --cta-bg: #f97316;
+  --cta-fg: #0c2d48;
+  --cta-hover: #fb8a3c;
+  --accent:      #145da0;
+  --accent-dark: #0c2d48;
+  --dark:        #0c2d48;
+  --gray:        #5a5a5a;
+  --light:       #f1f5f9;
+  --border:      #d8e2ee;
+  --badge-bg:    #e4eef9;
+  --badge-color: #0c4a85;
+  --urgent:      #b45309;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 660px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+
+header {
+  background: var(--dark);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+}
+header .eyebrow {
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: .25rem;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.hero {
+  border-bottom-color: var(--cta-bg);
+  background: linear-gradient(135deg, #0c2d48, #145da0);
+  border-bottom: 4px solid var(--accent);
+  color: #fff;
+  padding: 1.75rem 1.5rem;
+  border-radius: 0 0 14px 14px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.hero .badge {
+  display: inline-block;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.4);
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.hero h2 { margin: 0 0 .35rem; font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; }
+.hero p  { margin: 0; opacity: .95; font-size: .95rem; }
+
+.summary-row {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.summary-stat {
+  flex: 1;
+  min-width: 110px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .85rem 1rem;
+  text-align: center;
+}
+.summary-stat .val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: .2rem;
+}
+.summary-stat .lbl {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: .85rem;
+  gap: 1rem;
+}
+.card h3 {
+  margin: 0 0 .85rem;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 700;
+}
+.card-header h3 { margin: 0; }
+.lead-num {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.lead-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -.01em;
+  margin: 0 0 .2rem;
+}
+.lead-sub {
+  font-size: .85rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.status {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.status.urgent    { background: #fef3c7; color: var(--urgent); }
+.status.scheduled { background: #ede9fe; color: #6d28d9; }
+.status.flexible  { background: #d1fae5; color: #065f46; }
+
+.field { margin-bottom: .65rem; display: flex; gap: .8rem; align-items: baseline; }
+.field:last-child { margin-bottom: 0; }
+.field .label {
+  flex: 0 0 78px;
+  font-size: .78rem;
+  color: var(--gray);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.field .value {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--dark);
+  word-break: break-word;
+}
+.field .value a {
+  color: var(--accent-dark);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent);
+}
+.field .value.urgent { color: var(--urgent); }
+.field .value .quiet {
+  display: block;
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--gray);
+  margin-top: .1rem;
+}
+
+.note {
+  background: var(--light);
+  border-left: 4px solid var(--accent);
+  padding: .85rem 1rem;
+  border-radius: 4px;
+  margin-top: .75rem;
+  color: #2b3645;
+  font-size: .9rem;
+}
+
+.note-label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: .3rem; font-style: normal; }
+.tip { font-size: .85rem; color: var(--gray); margin-top: .6rem; }
+
+.photo-grid {
+  display: grid;
+  gap: .6rem;
+  margin-top: 1rem;
+}
+.photo-grid.one   { grid-template-columns: 1fr; }
+.photo-grid.two   { grid-template-columns: 2fr 1fr; }
+.photo-grid.three { grid-template-columns: 1.6fr 1fr 1fr; }
+@media (max-width: 520px) {
+  .photo-grid.two, .photo-grid.three { grid-template-columns: 1fr; }
+}
+.photo-grid figure {
+  margin: 0;
+  background: #f8f9fb;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.photo-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: opacity .15s;
+}
+.photo-grid img:hover { opacity: .9; }
+.photo-grid figcaption {
+  font-size: .75rem;
+  color: var(--gray);
+  padding: .5rem .75rem;
+  border-top: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.cta-card {
+  background: var(--dark);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.cta-card h3 {
+  margin: 0 0 .5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.cta-card p { margin: 0 0 1rem; opacity: .85; font-size: .92rem; }
+.cta-btn {
+  display: inline-block;
+  background: var(--cta-bg);
+  color: var(--cta-fg);
+  text-decoration: none;
+  padding: .85rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  margin: .25rem;
+  transition: background .15s;
+}
+.cta-btn:hover { background: var(--cta-hover); }
+.cta-btn.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.terms {
+  font-size: .8rem;
+  color: var(--gray);
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.terms ul { margin: .5rem 0 0; padding-left: 1.1rem; }
+.terms li { margin-bottom: .25rem; }
+
+footer {
+  text-align: center;
+  font-size: .75rem;
+  color: var(--gray);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+footer strong { color: var(--accent-dark); }
+
+.timestamp {
+  display: inline-block;
+  background: var(--badge-bg);
+  color: var(--badge-color);
+  padding: .15rem .55rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+#lb {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(8,14,22,.96);
+  z-index: 9999;
+  align-items: center; justify-content: center;
+  cursor: zoom-out;
+  padding: 2rem;
+}
+#lb.open { display: flex; }
+#lb img { max-width: 92vw; max-height: 90vh; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+
+/* ── Tab bar ── */
+.tab-bar {
+  display: flex;
+  gap: .5rem;
+  margin: 1.25rem 0 1rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+.tab-btn {
+  padding: .55rem 1.1rem;
+  font-size: .82rem;
+  font-weight: 700;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--gray);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  border-radius: 4px 4px 0 0;
+  transition: color .15s, border-color .15s;
+  font-family: inherit;
+  letter-spacing: .02em;
+}
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Status board ── */
+.sb-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem 1rem;
+  align-items: center;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+.sb-row:first-child { border-radius: 10px 10px 0 0; }
+.sb-row:last-child { border-bottom: none; border-radius: 0 0 10px 10px; }
+.sb-name { font-weight: 700; font-size: .88rem; }
+.sb-desc { font-size: .75rem; color: var(--gray); margin-top: .1rem; }
+.sb-badge {
+  padding: .3rem .75rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  font-family: inherit;
+  letter-spacing: .03em;
+  transition: opacity .15s;
+  user-select: none;
+}
+.sb-badge:active { opacity: .75; }
+.sb-badge[data-status="Active"]        { background: #d1fae5; color: #065f46; }
+.sb-badge[data-status="Contacted"]     { background: #dbeafe; color: #1e40af; }
+.sb-badge[data-status="Quote Sent"]    { background: #fef3c7; color: #92400e; }
+.sb-badge[data-status="Closed / Lost"] { background: #fee2e2; color: #991b1b; }
+.sb-wrap {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  overflow: hidden;
+  margin-top: .5rem;
+}
+.sb-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem 1rem;
+  padding: .5rem 1rem;
+  background: var(--dark);
+  color: rgba(255,255,255,.6);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sb-hint {
+  font-size: .72rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: .75rem;
+}
+.sb-badge.sb-saving{opacity:.55}.sb-badge.sb-error{background:#fdecea!important;color:#b42318!important;border-color:#b42318!important}
+/* Per-lead notes (2026-09-30) */
+.sb-row, .sb-header { grid-template-columns: 1fr auto auto; }
+.sb-note-btn {
+  padding: .3rem .7rem; border-radius: 999px; font: 700 .72rem/1 inherit; font-family: inherit;
+  letter-spacing: .03em; cursor: pointer; white-space: nowrap;
+  background: #fff; color: var(--dark); border: 1.5px solid var(--border);
+  display: inline-flex; align-items: center; gap: .35rem;
+}
+.sb-note-btn:hover, .sb-note-btn[aria-expanded="true"] { border-color: var(--accent); }
+.sb-note-btn .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: none; }
+.sb-note-btn.has-note .dot { display: inline-block; }
+.sb-note-panel { grid-column: 1 / -1; display: none; background: #eef4fb; border: 1px solid #c8dbef; border-radius: 8px; padding: .6rem; }
+.sb-note-panel.open { display: block; }
+.sb-note-panel textarea {
+  width: 100%; box-sizing: border-box; min-height: 84px; resize: vertical; font: .85rem/1.45 inherit; font-family: inherit;
+  border: 1px solid var(--border); border-radius: 6px; padding: .5rem .6rem; background: #fff; color: #1a1a1a;
+}
+.sb-note-panel textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+.sb-note-actions { display: flex; align-items: center; gap: .5rem; margin-top: .45rem; flex-wrap: wrap; }
+.sb-note-actions button { font: 700 .75rem/1 inherit; font-family: inherit; border-radius: 6px; padding: .45rem .9rem; cursor: pointer; }
+.sb-note-save { background: var(--dark); color: #fff; border: none; }
+.sb-note-cancel { background: transparent; color: var(--dark); border: 1px solid var(--border); }
+.sb-note-msg { font-size: .72rem; color: var(--gray); margin-left: auto; }
+.sb-note-msg.err { color: #991b1b; font-weight: 700; }
+@media (max-width: 480px) { .sb-note-btn { padding: .3rem .55rem; } }
+header { border-bottom-color: var(--cta-bg); }
+h1, h2, h3, .lead-title, .summary-stat .val { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+</style>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Iron Tiger Digital</div>
+  <h1>Cedar Rapids, IA · Radon Mitigation · Lead Packet</h1>
+</header>
+
+<div class="wrap">
+
+<div class="hero">
+  <span class="badge">Prepared for Jeremey, AIR Radon</span>
+  <h2>Cedar Rapids Radon Leads</h2>
+  <p><span id="stat-intro">1</span> inbound homeowner inquiry in the Cedar Rapids area, with verified contact info and the full project scope.</p>
+</div>
+
+<div class="summary-row">
+  <div class="summary-stat"><div class="val" id="stat-total">1</div><div class="lbl">Total leads</div></div>
+  <div class="summary-stat"><div class="val" id="stat-finish">1</div><div class="lbl">Mitigation install</div></div>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('leads')">Lead Details</button>
+  <button class="tab-btn" onclick="switchTab('status')">Status Board</button>
+</div>
+
+<div id="tab-leads" class="tab-panel active">
+
+<!-- Lead: Don Burrows -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="lead-title">Don Burrows</div>
+      <div class="lead-sub">Marion, IA 52302 · Radon mitigation system installation</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.4rem">
+      <span class="status">Qualified</span>
+    </div>
+  </div>
+  <div class="field">
+    <span class="label">Name</span>
+    <span class="value">Don Burrows</span>
+  </div>
+  <div class="field">
+    <span class="label">Phone</span>
+    <span class="value"><a href="tel:+13195518991">(319) 551-8991</a></span>
+  </div>
+  <div class="field">
+    <span class="label">Email</span>
+    <span class="value">Not given on the call</span>
+  </div>
+  <div class="field">
+    <span class="label">Address</span>
+    <span class="value">3298 1st Street, Marion, IA 52302</span>
+  </div>
+  <div class="field">
+    <span class="label">Service</span>
+    <span class="value">Radon mitigation system installation. He does not want testing.</span>
+  </div>
+  <div class="field">
+    <span class="label">Timeline</span>
+    <span class="value">Wants a quote, no date set</span>
+  </div>
+  <div class="field">
+    <span class="label">Source</span>
+    <span class="value">fiveseasonsradon.com, inbound call</span>
+  </div>
+  <div class="field">
+    <span class="label">Received</span>
+    <span class="value">September 30, 2026, 4:26 PM CT</span>
+  </div>
+  <div class="note"><span class="note-label">Call notes</span>He wants a mitigation system installed and said twice that he does not want testing. He has lived in the home for years and a test years ago came back clean, so he is not interested in retesting. He asked for an install price three times during the call.</div>
+  <p class="tip">Tip: lead with a price range, not with questions. That is what he called for.</p>
+</div>
+<div class="cta-card">
+  <h3>Questions? Ready to move on this lead?</h3>
+  <p>Reply to the email or call Costa directly. The first contractor to call has the best shot at the job.</p>
+  <a href="mailto:contact@irontigerdigital.com" class="cta-btn">contact@irontigerdigital.com</a>
+  <a href="tel:+12255354918" class="cta-btn secondary">Call (225) 535-4918</a>
+</div>
+
+</div><!-- /#tab-leads -->
+
+<div id="tab-status" class="tab-panel">
+  <div class="sb-wrap">
+    <div class="sb-header"><span>Lead</span><span>Notes</span><span>Status</span></div>
+    <div class="sb-row">
+      <div><div class="sb-name">Don Burrows</div><div class="sb-desc">3298 1st Street, Marion · Radon mitigation install</div></div>
+      <button class="sb-badge" data-id="don-burrows" data-status="Active" onclick="cycleStatus(this)">Active</button>
+    </div>
+  </div>
+  <p class="sb-hint">Tap a status to cycle: Active, Contacted, Quote Sent, Closed / Lost. Tap Notes to keep your own notes on a lead. Both save for everyone with this link, on any device.</p>
+</div><!-- /#tab-status -->
+
+<div class="terms">
+  <strong>About these leads:</strong>
+  <ul>
+    <li>I own fiveseasonsradon.com and a network of home-service lead sites. Cedar Rapids homeowners find the site on Google and call or fill out the estimate form.</li>
+    <li>Cedar Rapids and Linn County leads go to you only.</li>
+    <li>Leads are billed per lead as they come in, weekly, at the price agreed with Costa. No contract, no monthly fee.</li>
+    <li>Please call each lead within 24 hours and mark it on the Status Board.</li>
+  </ul>
+</div>
+
+<footer>
+  Iron Tiger Digital &nbsp;·&nbsp; <strong><a href="mailto:contact@irontigerdigital.com" class="__cf_email__" data-cfemail="c8aba7a6bca9abbc88a1baa7a6bca1afadbaaca1afa1bca9a4e6aba7a5">contact@irontigerdigital.com</a></strong> &nbsp;·&nbsp; (225) 535-4918 &nbsp;·&nbsp; Lead ID: CR-RADON-2026-09-30
+</footer>
+
+</div>
+
+<div id="lb" onclick="closeLb()">
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+function openLb(img) {
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-img').alt = img.alt;
+  document.getElementById('lb').classList.add('open');
+}
+function closeLb() {
+  document.getElementById('lb').classList.remove('open');
+  document.getElementById('lb-img').src = '';
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
+
+// Tab switching
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ── Status board — saved to the server so every device and every person
+// with this link sees the same thing. ─────────────────────────────────────
+// 2026-09-16: the previous version sent the PIN in a place the server did not
+// read, so EVERY save was rejected — and it never checked the response, so the
+// new status was painted from this browser's local storage and looked saved.
+// It was only ever saved on the device that clicked. Now: the server is the
+// source of truth (strongly consistent D1), every save is checked, a failed
+// save reverts and says so, and open pages refresh themselves.
+var STATUSES = ['Active', 'Contacted', 'Quote Sent', 'Closed / Lost'];
+var LS_PREFIX = '1-awesome-pool-sb-';
+var API = 'https://lead-manager-api.irontigerdigital.workers.dev/api/packet-status?pin=3636';
+var PACKET = 'air-radon';
+var pending = {};  // id -> true while a save is in flight (don't let a poll overwrite it)
+
+function paint(btn, status, note) {
+  btn.dataset.status = status;
+  btn.textContent = status;
+  btn.classList.remove('sb-saving', 'sb-error');
+  if (note === 'saving') btn.classList.add('sb-saving');
+  if (note === 'error') { btn.classList.add('sb-error'); btn.textContent = status + '. Not saved, tap to retry'; }
+}
+
+function save(btn, status, at) {
+  var id = btn.dataset.id;
+  pending[id] = true;
+  return fetch(API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pin: '3636', packet: PACKET, id: id, status: status, at: at })
+  })
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.ok) throw new Error(j.error || r.status); return j; }); })
+    .then(function (j) {
+      delete pending[id];
+      paint(btn, j.status);            // server's answer wins (it may be newer)
+      try { localStorage.setItem(LS_PREFIX + id, j.status); } catch (e) {}
+      return true;
+    })
+    .catch(function () {
+      delete pending[id];
+      paint(btn, status, 'error');
+      btn.dataset.retry = status;
+      return false;
+    });
+}
+
+function cycleStatus(btn) {
+  var id = btn.dataset.id;
+  if (pending[id]) return;
+  var base = btn.dataset.retry || btn.dataset.status;
+  var next = btn.dataset.retry ? base : STATUSES[(STATUSES.indexOf(base) + 1) % STATUSES.length];
+  delete btn.dataset.retry;
+  var prev = btn.dataset.status;
+  paint(btn, next, 'saving');
+  save(btn, next, Date.now()).then(function (ok) {
+    if (!ok) btn.dataset.prev = prev;
+  });
+}
+
+function refresh() {
+  return fetch(API + '&packet=' + PACKET + '&cb=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var remote = (data && data.statuses) || {};
+      document.querySelectorAll('.sb-badge').forEach(function (btn) {
+        var id = btn.dataset.id;
+        if (pending[id] || btn.dataset.retry) return;
+        if (remote[id] && STATUSES.indexOf(remote[id]) > -1) {
+          paint(btn, remote[id]);
+          try { localStorage.setItem(LS_PREFIX + id, remote[id]); } catch (e) {}
+        }
+      });
+      return remote;
+    });
+}
+
+// Load: paint the cached value instantly, then let the server correct it.
+document.querySelectorAll('.sb-badge').forEach(function (btn) {
+  try {
+    var cached = localStorage.getItem(LS_PREFIX + btn.dataset.id);
+    if (cached && STATUSES.indexOf(cached) > -1) paint(btn, cached);
+  } catch (e) {}
+});
+refresh().then(function (remote) {
+  // One-time rescue: statuses set on this device that never reached the server
+  // (every save before the fix). Sent with at=0 so they can NEVER override a
+  // value someone saved on the server since.
+  document.querySelectorAll('.sb-badge').forEach(function (btn) {
+    var id = btn.dataset.id, cached = null;
+    try { cached = localStorage.getItem(LS_PREFIX + id); } catch (e) {}
+    if (cached && cached !== 'Active' && !remote[id] && STATUSES.indexOf(cached) > -1) save(btn, cached, 0);
+  });
+}).catch(function () {});
+
+// Keep every open copy of this page in sync.
+setInterval(function () { if (!document.hidden) refresh().catch(function () {}); }, 20000);
+document.addEventListener('visibilitychange', function () { if (!document.hidden) refresh().catch(function () {}); });
+// ── Per-lead notes (2026-09-30) ──
+// One note per lead, saved on the server (/api/packet-notes) so it shows on every device.
+// The Notes button is added to every row by script, so rows added later get one too.
+var NOTES_API = 'https://lead-manager-api.irontigerdigital.workers.dev/api/packet-notes';
+var notes = {};         // id -> { note, at }
+var noteDirty = {};     // id -> true while the box is open with unsaved typing
+
+function ensureNoteButtons() {
+  document.querySelectorAll('.sb-row .sb-badge').forEach(function (badge) {
+    var row = badge.closest('.sb-row');
+    if (row.querySelector('.sb-note-btn')) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'sb-note-btn'; b.setAttribute('aria-expanded', 'false');
+    b.innerHTML = '<span class="dot"></span>Notes';
+    b.onclick = function () { toggleNote(b); };
+    badge.parentNode.insertBefore(b, badge);
+  });
+}
+function noteRow(el) { return el.closest('.sb-row'); }
+function noteBtnFor(row) { return row.querySelector('.sb-note-btn'); }
+function noteId(row) { return row.querySelector('.sb-badge').dataset.id; }
+function fmtAt(at) {
+  if (!at) return '';
+  var d = new Date(at);
+  return 'Saved ' + d.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ', ' + d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+}
+function paintNoteBtn(row) {
+  var n = notes[noteId(row)];
+  noteBtnFor(row).classList.toggle('has-note', !!(n && n.note && n.note.trim()));
+}
+function notePanel(row) {
+  var panel = row.querySelector('.sb-note-panel');
+  if (panel) return panel;
+  panel = document.createElement('div');
+  panel.className = 'sb-note-panel';
+  panel.innerHTML = '<textarea placeholder="Called, left voicemail. Quote sent. Follow up Friday."></textarea>' +
+    '<div class="sb-note-actions"><button type="button" class="sb-note-save">Save</button>' +
+    '<button type="button" class="sb-note-cancel">Close</button><span class="sb-note-msg"></span></div>';
+  row.appendChild(panel);
+  var ta = panel.querySelector('textarea');
+  ta.addEventListener('input', function () { noteDirty[noteId(row)] = true; setNoteMsg(row, 'Not saved yet'); });
+  ta.addEventListener('keydown', function (e) { if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') saveNote(row); });
+  panel.querySelector('.sb-note-save').onclick = function () { saveNote(row); };
+  panel.querySelector('.sb-note-cancel').onclick = function () { closeNote(row); };
+  return panel;
+}
+function setNoteMsg(row, text, isErr) {
+  var m = notePanel(row).querySelector('.sb-note-msg');
+  m.textContent = text || '';
+  m.classList.toggle('err', !!isErr);
+}
+function toggleNote(btn) {
+  var row = noteRow(btn), panel = notePanel(row);
+  if (panel.classList.contains('open')) return closeNote(row);
+  var n = notes[noteId(row)];
+  panel.querySelector('textarea').value = (n && n.note) || '';
+  setNoteMsg(row, n && n.at ? fmtAt(n.at) : '');
+  panel.classList.add('open');
+  btn.setAttribute('aria-expanded', 'true');
+  panel.querySelector('textarea').focus();
+}
+function closeNote(row) {
+  var id = noteId(row);
+  if (noteDirty[id] && !confirm('Close without saving this note?')) return;
+  delete noteDirty[id];
+  notePanel(row).classList.remove('open');
+  noteBtnFor(row).setAttribute('aria-expanded', 'false');
+}
+function saveNote(row) {
+  var id = noteId(row), panel = notePanel(row), text = panel.querySelector('textarea').value;
+  var saveBtn = panel.querySelector('.sb-note-save');
+  saveBtn.disabled = true;
+  setNoteMsg(row, 'Saving...');
+  fetch(NOTES_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pin: '3636', packet: PACKET, id: id, note: text, at: Date.now() })
+  })
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.ok) throw new Error(j.error || r.status); return j; }); })
+    .then(function (j) {
+      notes[id] = { note: j.note, at: j.at };
+      delete noteDirty[id];
+      if (j.stale) { panel.querySelector('textarea').value = j.note; setNoteMsg(row, 'Someone saved a newer note. Showing theirs.', true); }
+      else setNoteMsg(row, fmtAt(j.at));
+      paintNoteBtn(row);
+    })
+    .catch(function () { setNoteMsg(row, 'Not saved. Check your connection and tap Save again.', true); })
+    .then(function () { saveBtn.disabled = false; });
+}
+function refreshNotes() {
+  return fetch(NOTES_API + '?pin=3636&packet=' + PACKET + '&cb=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data || !data.ok) return;
+      notes = data.notes || {};
+      document.querySelectorAll('.sb-row').forEach(function (row) {
+        if (!row.querySelector('.sb-badge')) return;
+        paintNoteBtn(row);
+        var id = noteId(row), panel = row.querySelector('.sb-note-panel');
+        if (panel && panel.classList.contains('open') && !noteDirty[id]) {
+          var n = notes[id];
+          panel.querySelector('textarea').value = (n && n.note) || '';
+          setNoteMsg(row, n && n.at ? fmtAt(n.at) : '');
+        }
+      });
+    });
+}
+ensureNoteButtons();
+refreshNotes().catch(function () {});
+setInterval(function () { if (!document.hidden) refreshNotes().catch(function () {}); }, 20000);
+document.addEventListener('visibilitychange', function () { if (!document.hidden) refreshNotes().catch(function () {}); });
+</script>
+
+<script>
+(function () {
+  var cards = document.querySelectorAll('#tab-leads .card');
+  var total = cards.length;
+  if (!total) return;                       // never blank the page out on a selector change
+  var finish = 0;
+  for (var i = 0; i < cards.length; i++) {
+    if (/resurfac/i.test(cards[i].textContent || '')) finish++;
+  }
+  var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+  set('stat-total', total);
+  set('stat-intro', total);
+  set('stat-finish', finish);
+})();
+</script>
+</body>
+</html>
