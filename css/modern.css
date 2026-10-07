@@ -279,7 +279,7 @@ body.fs .sidebar-links a:hover { background: var(--soft); color: var(--ink); }
 body.fs .sidebar-links a:hover::after { opacity: 1; transform: translateX(3px); }
 body.fs .sidebar-links a.active { background: var(--green-soft); color: var(--green); }
 body.fs .sidebar-cta { position: relative; overflow: hidden; text-align: left; border: 0;
-  background: linear-gradient(160deg, rgba(8,16,30,.9), rgba(19,37,68,.95)), url("/images/site/exterior-fan-card.jpg") center / cover; }
+  background: linear-gradient(160deg, rgba(8,16,30,.9), rgba(19,37,68,.95)), url("/images/site/radon-fan-exterior-stack-card.webp") center / cover; }
 body.fs .sidebar-cta h3 { color: #fff; font-size: 1.3rem; }
 body.fs .sidebar-cta p { color: rgba(255,255,255,.8); font-size: .95rem; }
 body.fs .sidebar-cta .btn { width: 100%; padding: 15px 18px; }
