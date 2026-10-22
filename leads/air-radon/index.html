@@ -449,6 +449,11 @@ footer strong { color: var(--accent-dark); }
 @media (max-width: 480px) { .sb-note-btn { padding: .3rem .55rem; } }
 header { border-bottom-color: var(--cta-bg); }
 h1, h2, h3, .lead-title, .summary-stat .val { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+/* Inserted-lead header. tenant-delivery.js emits <div class="lead-divider"> above every
+   lead it adds, and without this rule it renders as plain body text (2026-10-22). */
+.lead-divider { display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0 1rem; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--gray); }
+.lead-divider::before, .lead-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 </style>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
