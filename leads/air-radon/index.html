@@ -395,6 +395,7 @@ footer strong { color: var(--accent-dark); }
 .sb-badge[data-status="Active"]        { background: #d1fae5; color: #065f46; }
 .sb-badge[data-status="Contacted"]     { background: #dbeafe; color: #1e40af; }
 .sb-badge[data-status="Quote Sent"]    { background: #fef3c7; color: #92400e; }
+.sb-badge[data-status="Closed Won"]    { background: #15803d; color: #fff; }
 .sb-badge[data-status="Closed / Lost"] { background: #fee2e2; color: #991b1b; }
 .sb-wrap {
   background: #fff;
@@ -637,7 +638,7 @@ h1, h2, h3, .lead-title, .summary-stat .val { font-family: 'Plus Jakarta Sans', 
       <button class="sb-badge" data-id="don-burrows" data-status="Active" onclick="cycleStatus(this)">Active</button>
     </div>
   </div>
-  <p class="sb-hint">Tap a status to cycle: Active, Contacted, Quote Sent, Closed / Lost. Tap Notes to keep your own notes on a lead. Both save for everyone with this link, on any device.</p>
+  <p class="sb-hint">Tap a status to cycle: Active, Contacted, Quote Sent, Closed Won, Closed / Lost. Tap Notes to keep your own notes on a lead. Both save for everyone with this link, on any device.</p>
 </div><!-- /#tab-status -->
 
 <div class="terms">
@@ -688,7 +689,7 @@ function switchTab(name) {
 // It was only ever saved on the device that clicked. Now: the server is the
 // source of truth (strongly consistent D1), every save is checked, a failed
 // save reverts and says so, and open pages refresh themselves.
-var STATUSES = ['Active', 'Contacted', 'Quote Sent', 'Closed / Lost'];
+var STATUSES = ['Active', 'Contacted', 'Quote Sent', 'Closed Won', 'Closed / Lost'];
 var LS_PREFIX = '1-awesome-pool-sb-';
 var API = 'https://lead-manager-api.irontigerdigital.workers.dev/api/packet-status?pin=3636';
 var PACKET = 'air-radon';
